@@ -16,10 +16,8 @@ main{
     background-color: #FFF;
 }
     main *{
-        padding: 20px;
     }
     main > *{
-        background-color: #000;
     }
 
 
@@ -28,22 +26,51 @@ header{
     display: flex;
     flex-direction: column;
     gap: 20px;
+    background-image: url('../img/header.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
     header #header-bar{
         display: flex;
         flex-direction: row;
-        background-color: midnightblue;
         gap: 20px;
     }
         header #header-bar > *{
-            background-color: maroon;
             display: flex;
-            justify-content: center;
             flex: 1;
         }
+        header #header-bar > .logo{
+            justify-content: start;
+        }
+            header #header-bar > .logo img{
+                height: 100%;
+                max-height: 100px;
+                width: auto;
+            }
         header #header-bar nav{
             flex: 3;
+            justify-content: center;
+            align-items: center;
         }
+            header #header-bar nav ul{
+                display: flex;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                gap:20px;
+            }
+        header #header-bar .rrss{
+            justify-content: end;
+            align-items: center;
+        }
+            header #header-bar .rrss ul{
+                display: flex;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                gap:20px;
+            }
         header #header-content{
             background-color: orangered;
         }
