@@ -1,5 +1,7 @@
 body{
     margin: 0;
+    font-family: sans-serif;
+    color: #000;
 }
 main{
     margin: auto;
@@ -7,8 +9,7 @@ main{
     max-width: 1200px;
     /*min-height: 100vh;*/
     display: grid;
-    grid-gap: 20px;
-    padding: 20px;
+    grid-gap: 10px;
     grid-template-areas: 
         "header"
         "content"
@@ -16,11 +17,18 @@ main{
     background-color: #FFF;
 }
     main *{
+        box-sizing: border-box;
     }
     main > *{
     }
     a{
-        color: black;
+        color: #555;
+    }
+    a:hover{
+        color: tomato;
+    }
+    p{
+        font-size: 12px;
     }
 
 
@@ -37,7 +45,8 @@ header{
     header #header-bar{
         display: flex;
         flex-direction: row;
-        gap: 20px;
+        gap: 20px; 
+        padding: 60px 30px 0;
     }
         header #header-bar > *{
             display: flex;
@@ -51,17 +60,26 @@ header{
                 max-height: 100px;
                 width: auto;
             }
+        
+        header #header-bar a{
+            text-decoration: none;
+        }
         header #header-bar nav{
             flex: 3;
-            justify-content: center;
             align-items: center;
         }
             header #header-bar nav ul{
                 display: flex;
+                flex: 1;
+                gap: 20px;
+                flex-direction: row;
+                justify-content: space-between;
                 list-style: none;
                 margin: 0;
                 padding: 0;
-                gap:20px;
+            }
+            header #header-bar nav i{
+                margin-right: 5px
             }
         header #header-bar .rrss{
             justify-content: end;
@@ -75,17 +93,32 @@ header{
                 gap:20px;
             }
         header #header-content{
-            background-color: orangered;
+            display: flex;
+            flex-basis: 250px;
+            justify-content: center;
+            align-items: end;
+            background-color: rgba (255, 255, 255, 0.1);
+            color: rgba(255, 80, 50, 0.6)
         }
-            header #header-content > div{
-                background-color: orange;
+            header #header-content > h1{
+                display: flex;
+                flex-basis: 90%;
+                padding-bottom: 50px;
+                min-height: 150px;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                font-family: serif;
+                font-weight: 100;
+                background-color: rgba(0, 0, 0, 0.1);
+                margin: 0;
             }
 /*END HEADER*/
 
 /*CONTENT*/
 article{
     display: flex;
-    gap: 20px;
+    gap: 10px;
     flex-direction: row;
 }
     article > *{        
@@ -93,51 +126,110 @@ article{
     }
     article #content{
         flex-direction: row;
-        flex: 2 1;
+        flex: 5 1;
         gap: 20px;
-        background-color: mediumblue;
+        background-color: #CCC;
         flex-wrap: wrap;
+        padding: 10px;
     }
         article #content > .element{
-            background-color: skyblue;
+            background-color: #EEE;
+            padding: 10px;
             flex-grow: 1 ;
-            flex: 1 1 200px;
+            flex: 1 1 350px;
+        }
+        article #content > .element > .photo{
+            background-position: center;
+            background-size: cover;
+            height: 210px;
+            display: flex;
+            align-items: end;
+            color:yellow;
+            padding: 4px;
+            font-size: 10px;
+        }
+        article #content > .element > .title{
+            color: white;
+            background-color: rgb(255, 100, 90);
+            margin-top: 5px;
+            padding: 15px 5px 2px;
+            font-weight: 200;
+            text-transform: uppercase;
+        }
+        article #content > .element > .text{
+            columns: 2;
+        }
+        article #content > .element > a{
+            text-decoration: none;
+            font-size: 12px;
         }
         article #content > #pager{
-            background-color: white;
+            text-align: center;
             flex: 1 1 100%;
         }
     article aside{
         flex: 1 3;
         flex-direction: column;
-        background-color: tomato;
-        gap: 10px;
+        background-color: #CCC;
         justify-content: start;
+        padding: 20px;
+        text-align: center;
     }
-        article aside > #aside-content{
-            background-color: yellow;
-            
-        }
+    article aside > p{
+    }
 /*END CONTENT*/
 
 /*FOOTER*/
-footer #footer-content{
-    background-color: #FF0;
+footer {
+    background-color: #EEE;
+    border:20px solid #CCC;
+    border-top: 0;
+    border-bottom: 0;
+    padding: 10px 0;
+    text-align: center;
+    color: #555;
+}
+footer > p{
+    margin: 0;
 }
 /*END FOOTER*/
 
-@media only screen and (max-width: 930px) {
+@media only screen and (max-width: 950px) {
     /*CONTENT*/
     article{
-        background-color: #FF0;
         flex-direction: column;
     }
         article #content > .element{
-            flex-basis: 220px;
+            flex-basis: 300px;
+        }
+        article #content > .element > .text{
+            columns: 1;
         }
     /*END CONTENT*/
 }
 
+@media only screen and (max-width: 850px) {
+    /*HEADER*/
+    header #header-bar{
+        display: flex;
+        flex-direction: column;
+        gap: 20px; 
+        padding: 60px 30px 0;
+    }
+        header #header-bar > .logo{
+            justify-content: center;
+        }
+        header #header-bar > .rrss{
+            justify-content: center;
+        }
+    /*FIN HEADER*/
+}
+
+@media only screen and (max-width: 520px) {
+    header #header-bar > nav span{
+        display: none;
+    }
+}
 @media only screen and (max-width: 470px) {
     /*HEADER*/
     header #header-bar {
