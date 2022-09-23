@@ -19,8 +19,6 @@ main{
     main *{
         box-sizing: border-box;
     }
-    main > *{
-    }
     a{
         color: #555;
     }
@@ -200,8 +198,6 @@ article{
         justify-content: start;
         padding: 20px;
         text-align: center;
-    }
-    article aside > p{
     }
 /*END CONTENT*/
 
