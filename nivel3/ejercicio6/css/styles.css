@@ -43,6 +43,7 @@ header{
     background-size: cover;
 }
     header #header-bar{
+        position: relative;
         display: flex;
         flex-direction: row;
         gap: 20px; 
@@ -53,20 +54,38 @@ header{
             flex: 1;
         }
         header #header-bar > .logo{
+            position: relative;
             justify-content: start;
+            animation-name: down-animation;
+            animation-duration: 4s;
+            animation-timing-function: ease-in-out;	
         }
+            header #header-bar > .logo a{
+                display: flex;
+                justify-items: center;
+                align-items: center;
+            }
+            header #header-bar > .logo a:hover img{
+                transform: scale(0.9);
+            }
             header #header-bar > .logo img{
+                transform: scale(1);
                 height: 100%;
                 max-height: 100px;
                 width: auto;
+                transition: all .15s ease-out;
             }
         
         header #header-bar a{
             text-decoration: none;
         }
         header #header-bar nav{
+            position: relative;
             flex: 3;
-            align-items: center;
+            align-items: center;            
+            animation-name: down-animation;
+            animation-duration: 4s;
+            animation-timing-function: ease-in-out;	
         }
             header #header-bar nav ul{
                 display: flex;
@@ -82,8 +101,12 @@ header{
                 margin-right: 5px
             }
         header #header-bar .rrss{
+            position: relative;
             justify-content: end;
             align-items: center;
+            animation-name: down-animation;
+            animation-duration: 4s;
+            animation-timing-function: ease-in-out;	
         }
             header #header-bar .rrss ul{
                 display: flex;
@@ -111,6 +134,10 @@ header{
                 font-weight: 100;
                 background-color: rgba(0, 0, 0, 0.1);
                 margin: 0;
+                animation-name: up-animation;
+                animation-duration: 2s;
+                animation-timing-function: ease-in-out;	
+                overflow: hidden;
             }
 /*END HEADER*/
 
@@ -192,6 +219,35 @@ footer > p{
     margin: 0;
 }
 /*END FOOTER*/
+
+/*ANIMATIONS*/
+
+@keyframes down-animation {
+    0%   {
+        top:-50px;
+        opacity: 0;
+    }
+    100% { 
+        top: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes up-animation {
+    0%   {
+        opacity: 0;
+        padding-bottom: 0px;
+        min-height: 0px;
+    }
+    100% { 
+        opacity: 1;
+        padding-bottom: 50px;
+        min-height: 150px;
+    }
+}
+
+
+/*END ANIMATIONS*/
 
 @media only screen and (max-width: 950px) {
     /*CONTENT*/
